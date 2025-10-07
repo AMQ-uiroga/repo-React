@@ -12,8 +12,7 @@ function App() {
         <img
           src={logo}
           alt="logo de la tienda de color negro y rosa con la imagen de una remera y una bolsa que dice Clothing Store."
-        />
-        <CartWidget />
+        />        
       </div>
       <ItemListContainer saludo="Bienvenido Proximamente a la Tienda Online" />
     </>

@@ -1,3 +1,5 @@
+import { CartWidget } from "./CartWidget";
+
 export const NavBar = () => (
   <>
     <nav className="navbar">
@@ -11,6 +13,10 @@ export const NavBar = () => (
         <li>
           <a href="#">Contacto</a>
         </li>
+        <li>
+          <CartWidget />
+        </li>
+        
       </ul>
     </nav>
   </>
