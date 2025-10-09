@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Camiseta básica",
+    "id": "001",
+    "category": "Playeras",
+    "detail": "Camiseta de algodón, color blanco, talla mediana",
+    "img": "/repo-React/assets/CamisetaBlanca.jpg"
+  },
+  {
+    "name": "Campera de cuero",
+    "id": "002",
+    "category": "Playeras",
+    "detail": "Chaqueta de cuero sintético, color negro, talla L",
+    "img": "/repo-React/assets/CamperaCuero.jpg"
+  },
+  {
+    "name": "Jeans recto",
+    "id": "003",
+    "category": "Pantalones",
+    "detail": "Jeans de corte recto, lavado oscuro, talla 32",
+    "img": "/repo-React/assets/PantalonRecto.jpg"
+  },
+  {
+    "name": "Pantalones Anchos",
+    "id": "004",
+    "category": "Pantalones",
+    "detail": "Pantalones anchos de tela liviana, color caqui, talla 34",
+    "img": "/repo-React/assets/PantalonAncho.jpg"
+  }
+]

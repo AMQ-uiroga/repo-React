@@ -18,17 +18,27 @@ body {
   width: 100vw;
 }
 
+.product {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card {
+text-align: center;
+}
+
 .header img {
   width: 70px;
   margin: 8px;
 }
 
-.navbar {
+/*.nav-link {
   padding: 10px 0;
   width: 40%;
 }
 
-nav a {
+.nav-link a {
   color: black;
   text-decoration: none;
   font-size: 17px;
@@ -48,6 +58,47 @@ nav ul li {
   text-decoration: none;
   font-size: 10px;
   font-weight: bold;
+}*/
+
+.nav-link { 
+  margin: 0 16px;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  transition: color 0.2s;
+  padding: 10px 0;
+  width: 40%;
+}
+
+.nav-link:hover {
+  color: #16161f;
+}
+
+.me-auto {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+.home-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .carrito-icono {
@@ -62,6 +113,39 @@ nav ul li {
   animation: mymove 10s;
   animation-iteration-count: 3;
   animation-timing-function: ease-in-out;
+}
+
+.titulo {
+  text-align: center;
+  margin: 20px;
+  display: flex;
+  font-size: 50px;
+  justify-content: center;
+}
+
+.contacto-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.contacto-form div {
+  display: flex;
+ }
+
+.contacto-form label {
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+  text-align: center;
+  width: 100px;
+}
+
+.contacto-form input {
+  font-size: 1.1rem;
+  padding: 6px 10px;
+  margin-left: 8px;
 }
 
 @keyframes mymove {

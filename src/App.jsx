@@ -1,21 +1,26 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
+import { NavBar } from "./components/NavBar"
+import { Error404 } from "./views/Error404"
+import { Contact } from "./views/Contact"
+import { Home } from "./views/Home"
+import { ProductsByCategory } from "./views/ProductsByCategory"
 import "./App.css";
-import { CartWidget } from "./components/CartWidget";
-import { ItemListContainer } from "./components/ItemListContainer";
-import { NavBar } from "./components/NavBar";
-import logo from "./assets/logoStore.png";
+import { Detail } from "./views/Detail"
 
 function App() {
   return (
-    <>
-      <div className="header">
-        <NavBar />
-        <img
-          src={logo}
-          alt="logo de la tienda de color negro y rosa con la imagen de una remera y una bolsa que dice Clothing Store."
-        />        
-      </div>
-      <ItemListContainer saludo="Bienvenido Proximamente a la Tienda Online" />
-    </>
+    <BrowserRouter basename="/repo-React">
+			<NavBar />
+			<Routes>
+        <Route path="/" element={<Home />} />
+				<Route path="/contact" element={<Contact />} />
+	      		<Route path="/category/:categoryId" element={<ProductsByCategory />} />
+				<Route path="/products/:productId" element={<Detail />} />
+				<Route path="*" element={<Error404 />} />
+			</Routes>
+		</BrowserRouter>
+
   );
 }
 

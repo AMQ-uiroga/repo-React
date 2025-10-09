@@ -54,6 +54,17 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.campo label {
+  margin-bottom: 2px;
+  
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
