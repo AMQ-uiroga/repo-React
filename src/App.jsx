@@ -5,6 +5,7 @@ import { Error404 } from "./views/Error404"
 import { Contact } from "./views/Contact"
 import { Home } from "./views/Home"
 import { ProductsByCategory } from "./views/ProductsByCategory"
+import { ConexionPrueba } from "./views/ConexionPrueba"
 import "./App.css";
 import { Detail } from "./views/Detail"
 
@@ -18,6 +19,7 @@ function App() {
 	      		<Route path="/category/:categoryId" element={<ProductsByCategory />} />
 				<Route path="/products/:productId" element={<Detail />} />
 				<Route path="*" element={<Error404 />} />
+				<Route path="/prueba" element={<ConexionPrueba />} />
 			</Routes>
 		</BrowserRouter>
 
