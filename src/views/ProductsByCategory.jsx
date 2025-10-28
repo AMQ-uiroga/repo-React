@@ -2,28 +2,28 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { ItemListContainer } from "../components/ItemListContainer";
-
-import data from "../data/products.json";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../tools/firebase.jsx";
 
 export const ProductsByCategory = () => {
   const [products, setProducts] = useState([]);
   const { categoryId } = useParams();
 
   useEffect(() => {
-    new Promise((resolve, reject) => {
-      setTimeout(() => resolve(data), 500);
-    })
-      .then((response) => {
-        if (categoryId) {
-          const productsFilteredByCategory = response.filter(
-            (product) => product.category === categoryId
-          );
-
-          console.log({ response, productsFilteredByCategory });
-          setProducts(productsFilteredByCategory);
-        }
-      });
-      
+    const orderCollection = categoryId
+      ? query(collection(db, "productos"), where("categoryId", "==", categoryId))
+      : collection(db, "productos");
+    getDocs(orderCollection).then((snapshot) => {
+      if (snapshot.size === 0) setProducts([]);
+      else {
+        setProducts(
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }))
+        );
+      }
+    });
   }, [categoryId]);
 
   return (
