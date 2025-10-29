@@ -1,29 +1,25 @@
-import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
-import { Container } from "react-bootstrap"
-import data from "../data/products.json"
-import { ItemDetailContainer } from "../components/ItemDetailContainer"
-
-
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import { ItemDetailContainer } from "../components/ItemDetailContainer";
+import { getDoc, doc } from "firebase/firestore";
+import { db } from "../tools/firebase.jsx";
 
 export const Detail = () => {
-	const [prod, setProd] = useState([])
-	const { productId } = useParams()
+  const [prod, setProd] = useState([]);
+  const { productId } = useParams();
 
-		useEffect(() => {
-		if (productId) {
-			const productsFiltered = data.filter(
-				product => product.id === productId
-			)
+  useEffect(() => {
+	const docRef = doc(db, "productos", productId);
+	getDoc(docRef).then((docSnap) => {
+	  setProd({ id: docSnap.id, ...docSnap.data() });
+	});
 
-			console.log({ data, productsFiltered })
-			setProd(productsFiltered[0])
-		}
-	}, [productId])
-	
-	return (
-		<Container>	
-			<ItemDetailContainer prod={prod} />
-		</Container>
-	)
-}
+  }, [productId]);
+
+   return (
+    <Container>
+      <ItemDetailContainer prod={prod} />
+    </Container>
+  );
+};
