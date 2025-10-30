@@ -9,8 +9,8 @@ export const Home = () => {
 	const [products, setProducts] = useState([])
 
 	useEffect(() => {
-		const orderCollection = collection(db, "productos");
-		getDocs(orderCollection).then(snapshot => {
+		const prodCollection = collection(db, "productos");
+		getDocs(prodCollection).then(snapshot => {
 			if (snapshot.size === 0) setProducts([])
 			else {
 				setProducts(

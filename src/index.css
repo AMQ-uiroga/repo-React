@@ -65,6 +65,11 @@ button:focus-visible {
   
 }
 
+.titulo-carrito {
+    text-align: center;
+    margin:14px;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
