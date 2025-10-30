@@ -2,20 +2,22 @@ import { Container, Card } from "react-bootstrap";
 import { useContext } from "react"
 import { CartContext } from "../context/cartContext";
 import { Button } from "react-bootstrap";
+import ListGroup from 'react-bootstrap/ListGroup';
+
 
 export const ItemDetailContainer = ({ prod }) => {
   const { addItem } = useContext(CartContext)
 
   return (
   <Container className="d-flex flex-wrap product">
-    /
+    
     <Card key={prod.id} style={{ flex: 1 }}>
       <Card.Img variant="top" src={prod.imgId} height="200" />
-      <Card.Body>
-        <Card.Title>
+       <Card.Body>
+        <Card.Title className="text-center">
           <strong>Nombre:</strong> {prod.name}
         </Card.Title>
-        <Card.Text>
+        <Card.Text className="text-center">
           <strong>Detalle:</strong> {prod.detail}
         </Card.Text>
         <Card.Text>
@@ -30,7 +32,8 @@ export const ItemDetailContainer = ({ prod }) => {
         <Button variant="outline-primary" onClick={() => addItem(prod, 1)}>
           Agregar al carrito
         </Button>
-      </Card.Body>
+      </Card.Body>     
+     
     </Card>
   </Container>)
 };

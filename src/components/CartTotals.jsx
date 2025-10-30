@@ -37,8 +37,10 @@ export const CartTotals = () => {
 
   return (
     <Container>
-      <div>Total: ${total()}</div>
-      <button onClick={sendOrder}>FINALIZAR COMPRA</button>
+      <div className="titulo-carrito "> Total: ${total()}</div>
+      <div className="titulo-carrito">
+      <button  onClick={sendOrder} className="fw-bold" >FINALIZAR COMPRA</button>
+      </div>
     </Container>
   );
 };

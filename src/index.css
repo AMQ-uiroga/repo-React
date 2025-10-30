@@ -68,6 +68,7 @@ button:focus-visible {
 .titulo-carrito {
     text-align: center;
     margin:14px;
+    font-weight: bold;
 }
 
 @media (prefers-color-scheme: light) {
